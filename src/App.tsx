@@ -1,19 +1,22 @@
-//React router
+// React router
 import { BrowserRouter } from "react-router-dom"
 // components
-import { AppRoutes } from "./routes/AppRoutes"
+import { ThemeProvider } from "styled-components"
+import { AppRoutes } from "./app/routes/AppRoutes"
 // Styles
-import { GlobalStyles } from "./app/shared/styled/global"
-import "./App.css"
+import { GlobalStyles } from "./app/styled/global"
+import theme from "./app/styled/theme"
 
 function App() {
   return (
-    <div className="App">
-      <GlobalStyles />
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <GlobalStyles />
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </div>
+    </ThemeProvider>
   )
 }
 

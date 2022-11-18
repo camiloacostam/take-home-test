@@ -1,7 +1,7 @@
-import { Route, Routes } from "react-router-dom";
-import { app_routes } from "./routes";
+import { Route, Routes } from "react-router-dom"
+import { app_routes } from "./routes"
 
-export const AppRoutes = () => {
+export function AppRoutes() {
   return (
     <Routes>
       {app_routes.map((item, index) => (
@@ -13,5 +13,5 @@ export const AppRoutes = () => {
       ))}
       <Route path="*" element={<div>404 Not found</div>} />
     </Routes>
-  );
-};
+  )
+}
